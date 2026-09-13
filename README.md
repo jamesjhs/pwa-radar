@@ -1,11 +1,11 @@
 # pwa-radar
-PWA-based radar simulator using publicly-accessible data
+PWA-based 2D live radar simulator using OpenSky Network ADS-B data
 
 ## Development Phase Plan
 
 ### Phase 1: Discovery and Scope Definition
 1. Define the primary user roles (e.g., enthusiast, analyst, educator).
-2. Confirm the initial radar simulation use-cases to support in v1.
+2. Confirm v1 use-cases for 2D live aircraft tracking only.
 3. Identify required public data sources and their access constraints.
 4. Establish non-functional goals (performance, offline behavior, security, accessibility).
 
@@ -22,7 +22,7 @@ PWA-based radar simulator using publicly-accessible data
 4. Add baseline observability (error logging, performance metrics, health checks).
 
 ### Phase 4: Core Data Pipeline
-1. Implement adapters for selected public data sources.
+1. Implement OpenSky Network API adapter and polling pipeline.
 2. Normalize and validate inbound data into a consistent internal schema.
 3. Add update scheduling/stream handling and resilience for partial data failures.
 4. Introduce caching strategy for repeat queries and offline fallback behavior.
@@ -51,11 +51,10 @@ PWA-based radar simulator using publicly-accessible data
 3. Collect telemetry and user feedback after release.
 4. Prioritize post-release improvements for the next iteration cycle.
 
-## Clarifications Needed
+## Finalized v1 Scope
 
-To refine this plan into implementation-ready tasks, please confirm:
-1. Which public data sources are in scope for v1?
-2. Is the radar display intended to be 2D only, or should 3D views be supported?
-3. Should v1 prioritize real-time live tracking, historical playback, or both?
-4. Are there deployment constraints (e.g., GitHub Pages, Vercel, self-hosted)?
-5. Are there explicit compliance/security requirements beyond standard web best practices?
+1. Data source: OpenSky Network only.
+2. Visualization: 2D radar display only.
+3. Tracking mode: live tracking only (no historical playback in v1).
+4. Deployment target: self-hosted within a web host.
+5. Security/compliance: normal web best practices.
